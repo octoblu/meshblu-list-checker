@@ -2,7 +2,18 @@ _      = require 'lodash'
 ListChecker = require '..'
 
 describe 'check', ->
-  context 'when a uuid is in a list', ->
+  context 'when a list not an object', ->
+    beforeEach ->
+      uuid = '0'
+      list = ['a', 'b']
+
+      @sut = new ListChecker list
+      @inList = @sut.check uuid
+
+    it 'should return false', ->
+      expect(@inList).to.be.false
+
+  context 'when a uuid is in an undefined list', ->
     beforeEach ->
       uuid = 'a'
       list = undefined

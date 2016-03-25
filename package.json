@@ -1,6 +1,6 @@
 {
   "name": "meshblu-list-checker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Checks security lists for meshblu",
   "main": "index.js",
   "directories": {
