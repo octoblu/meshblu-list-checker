@@ -1,5 +1,5 @@
 {
-  "name": "meshblu-whitelist-checker",
+  "name": "meshblu-list-checker",
   "version": "1.0.0",
   "description": "Checks security lists for meshblu",
   "main": "index.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/octoblu/meshblu-whitelist-checker.git"
+    "url": "git+https://github.com/octoblu/meshblu-list-checker.git"
   },
   "keywords": [
     "meshblu",
@@ -20,9 +20,9 @@
   "author": "Octoblu <npm@octoblu.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/octoblu/meshblu-whitelist-checker/issues"
+    "url": "https://github.com/octoblu/meshblu-list-checker/issues"
   },
-  "homepage": "https://github.com/octoblu/meshblu-whitelist-checker#readme",
+  "homepage": "https://github.com/octoblu/meshblu-list-checker#readme",
   "devDependencies": {
     "chai": "^3.5.0",
     "coffee-coverage": "^1.0.1",
