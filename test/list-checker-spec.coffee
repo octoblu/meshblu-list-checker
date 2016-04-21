@@ -2,10 +2,21 @@ _      = require 'lodash'
 ListChecker = require '..'
 
 describe 'check', ->
-  context 'when a list not an object', ->
+  context 'when a list an array, but not of objects', ->
     beforeEach ->
-      uuid = '0'
+      uuid = 'a'
       list = ['a', 'b']
+
+      @sut = new ListChecker list
+      @inList = @sut.check uuid
+
+    it 'should return false', ->
+      expect(@inList).to.be.false
+
+  context 'when a list an object', ->
+    beforeEach ->
+      uuid = 'a'
+      list = {'a': true, 'b': true}
 
       @sut = new ListChecker list
       @inList = @sut.check uuid
@@ -27,8 +38,7 @@ describe 'check', ->
   context 'when a uuid is in a list', ->
     beforeEach ->
       uuid = 'a'
-      list =
-        a: {}
+      list = [{uuid: 'a'}]
 
       @sut = new ListChecker list
       @inList = @sut.check uuid
@@ -39,7 +49,7 @@ describe 'check', ->
   context 'when a uuid is not in a list', ->
     beforeEach ->
       uuid = 'a'
-      list = {}
+      list = []
 
       @sut = new ListChecker list
       @inList = @sut.check uuid
@@ -49,7 +59,7 @@ describe 'check', ->
 
   context 'when the list has a *', ->
     beforeEach ->
-      list = '*': {}
+      list = [{uuid: '*'}]
 
       @sut = new ListChecker list
       @inList = @sut.check 'anything'

@@ -3,9 +3,8 @@ class ListChecker
   constructor: (@list) ->
 
   check: (uuid) =>
-    return false unless _.isPlainObject @list
-    keys = _.keys @list
-    return true if _.includes keys, '*'
-    _.includes keys, uuid
+    return true if _.some @list, uuid: '*'
+    return true if _.some @list, uuid: uuid
+    return false
 
 module.exports = ListChecker
